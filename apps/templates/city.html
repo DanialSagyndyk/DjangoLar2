@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>City Time</h2>
+    <form method="get">
+        <label for="city">Enter City Name:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit">Get Time</button>
+    </form>
+    <a href="/"><button>Home</button></a>
+    {% if city and time %}
+        <h3>Current time in {{ city }}: {{ time }}</h3>
+    {% elif error %}
+        <h3 style="color:red;">{{ error }}</h3>
+    {% endif %}
+</body>
+</html>
